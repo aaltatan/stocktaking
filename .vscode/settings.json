@@ -1,0 +1,7 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "monosans.djlint",
+    "editor.wordWrap": "off"
+  },
+  "python.analysis.typeCheckingMode": "off",
+}

@@ -1,0 +1,13 @@
+<meta charset="UTF-8" />
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+<style>
+  [x-cloak] {
+    display: none;
+  }
+</style>
+<link rel="shortcut icon"
+      href="{% vite_asset_url 'assets/vite.svg' %}"
+      type="image/x-icon" />
+{% vite_hmr_client %}
+{% vite_asset './assets/main.ts' %}

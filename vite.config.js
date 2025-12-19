@@ -1,0 +1,27 @@
+import { resolve } from "path";
+import tailwindcss from "tailwindcss";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  server: {
+    watch: {
+      ignored: ["**/*.py", "**/*.pyc", "**/__pycache__/**"],
+    },
+  },
+  base: "/static/",
+  build: {
+    manifest: "manifest.json",
+    outDir: resolve("./static"),
+    rollupOptions: {
+      input: {
+        assets: resolve("./assets/main.ts"),
+      },
+    },
+  },
+  plugins: [],
+  css: {
+    postcss: {
+      plugins: [tailwindcss()],
+    },
+  },
+});
