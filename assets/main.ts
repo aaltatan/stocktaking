@@ -1,6 +1,6 @@
 import Alpine, { type Alpine as AlpineType } from "alpinejs";
 import htmx from "htmx.org";
-import "./style.css";
+import "./styles.css";
 
 declare global {
   interface Window {

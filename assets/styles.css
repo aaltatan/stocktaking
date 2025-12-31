@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .input {
+    @apply p-2.5 rounded-lg bg-neutral-100 outline-none w-full text-sm placeholder:text-neutral-500;
+  }
+
+  .tr {
+    @apply border-b border-neutral-200 dark:border-neutral-800 aria-[highlighted]:bg-red-200 aria-[highlighted]:dark:bg-red-900;
+  }
+
+  .spinner {
+    display: block;
+    width: 1rem; /* size-4 = 16px = 1rem */
+    height: 1rem; /* size-4 = 16px = 1rem */
+    border: 2px solid; /* border-2 */
+    border-color: #d4d4d4; /* border-neutral-300 */
+    border-top-color: orangered; /* border-t-green-400 */
+    border-radius: 9999px; /* rounded-full */
+    animation: spin 500ms linear infinite; /* animate-spin with duration */
+  }
+
+  .htmx-request.htmx-pulse-animation {
+    animation: fade-in-animation 1200ms ease-in-out infinite; /* animate-spin with duration */
+  }
+}

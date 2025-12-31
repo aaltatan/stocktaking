@@ -1,5 +1,28 @@
+{% load i18n %}
+
 <c-layout title='{% translate "Stocktaking" %}'>
-  <h1 class="text-3xl font-semibold tracking-tighter">
-    Hello World
-  </h1>
+  <c-form-container id="search-form" hx-trigger="keyup changed delay:500ms" hx-get="{% url 'index' %}" hx-target="#tbody" class="my-2">
+    <c-inputs.input :field="filterset.form.q" placeholder='{% translate "Search Items" %}' autofocus />
+  </c-form-container>
+  <table class="w-full table-auto">
+    <thead>
+      <tr>
+        <c-table.th>
+          {% translate "Serial" %}
+        </c-table.th>
+        <c-table.th>
+          {% translate "Code" %}
+        </c-table.th>
+        <c-table.th>
+          {% translate "Name" %}
+        </c-table.th>
+        <c-table.th>
+          {% translate "Qty" %}
+        </c-table.th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+      <c-tbody :object-list="object_list" />
+    </tbody>
+  </table>
 </c-layout>

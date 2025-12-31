@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<c-layout title='{% translate "Upload" %}'>
+  <form action="{% url 'upload' %}"
+        enctype="multipart/form-data"
+        method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit"
+           class="border p-2 rounded-md bg-neutral-100"
+           value='{% translate "Upload" %}' />
+  </form>
+</c-layout>

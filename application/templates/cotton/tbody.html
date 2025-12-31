@@ -1,0 +1,19 @@
+{% for item in object_list %}
+  <tr class="odd:bg-neutral-100"
+      {% if forloop.last and page_obj.has_next %}
+        hx-get="{% url 'index' %}?page={{ page_obj.next_page_number }}" hx-target="#tbody" hx-swap="beforeend" hx-trigger="revealed"
+      {% endif %}>
+    <c-table.td>
+      {{ item.serial }}
+    </c-table.td>
+    <c-table.td>
+      {{ item.code }}
+    </c-table.td>
+    <c-table.td>
+      {{ item.name }}
+    </c-table.td>
+    <c-table.td>
+      {{ item.initial_qty }}
+    </c-table.td>
+  </tr>
+{% endfor %}

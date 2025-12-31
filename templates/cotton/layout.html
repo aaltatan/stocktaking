@@ -3,15 +3,10 @@
 <c-vars title="Stocktaking" />
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0" />
-    {% vite_hmr_client %}
-    {% vite_asset './assets/main.ts' %}
-    <title>{{ title }}</title>
-  </head>
-  <body>
+  <c-head />
+  <body dir="rtl"
+        hx-headers='{ "X-CSRFToken": "{{ csrf_token }}" }'>
+    <c-header />
     <main class="max-w-4xl p-4 mx-auto">
       {{ slot }}
     </main>

@@ -11,9 +11,9 @@ def main():
     """Run administrative tasks."""
     debug = config("DEBUG", default=True, cast=bool)
 
-    settings_module: str = "dep"
+    settings_module: str = "deployment"
     if debug:
-        settings_module = "dev"
+        settings_module = "development"
 
     if "test" in sys.argv:
         settings_module = "testing"
@@ -23,7 +23,7 @@ def main():
         f"project.settings.{settings_module}",
     )
     try:
-        from django.core.management import execute_from_command_line
+        from django.core.management import execute_from_command_line  # noqa: PLC0415
     except ImportError as exc:
         raise ImportError(  # noqa: TRY003
             "Couldn't import Django. Are you sure it's installed and "  # noqa: EM101
