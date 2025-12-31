@@ -19,10 +19,7 @@ class ItemFilter(filters.FilterSet):
         if not value.strip():
             return queryset
 
-        queryset = queryset.search(value)
-        print(queryset)
-        print('#' * 100)
-        return queryset
+        return queryset.search(value)
 
     class Meta:
         model = Item
